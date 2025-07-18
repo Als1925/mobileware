@@ -1,25 +1,58 @@
-[gd_scene load_steps=8 format=3 uid="uid://c4sce6ecoft5t"]
+[gd_scene load_steps=14 format=3 uid="uid://c4sce6ecoft5t"]
 
 [ext_resource type="Script" uid="uid://cl8iuhlora0cr" path="res://scripts/ballon_eclatable.gd" id="1_mhxi4"]
+[ext_resource type="Texture2D" uid="uid://cv21daml4ivaj" path="res://assets/sprites/ballons/5c258dadd7c1475095cec95e5812a1d4MgI2IXekxoMOOEDO-7.png" id="9_8yfkq"]
+[ext_resource type="Texture2D" uid="uid://b31b1gxo7bp2j" path="res://assets/sprites/ballons/5c258dadd7c1475095cec95e5812a1d4MgI2IXekxoMOOEDO-8.png" id="10_vfn61"]
+[ext_resource type="Texture2D" uid="uid://b6cy07kqq453a" path="res://assets/sprites/ballons/5c258dadd7c1475095cec95e5812a1d4MgI2IXekxoMOOEDO-9.png" id="11_u6t1g"]
+[ext_resource type="Texture2D" uid="uid://dkb7imcbcl3us" path="res://assets/sprites/ballons/5c258dadd7c1475095cec95e5812a1d4MgI2IXekxoMOOEDO-10.png" id="12_3hd5p"]
+[ext_resource type="Texture2D" uid="uid://d2v7c1a213y4d" path="res://assets/sprites/ballons/5c258dadd7c1475095cec95e5812a1d4MgI2IXekxoMOOEDO-11.png" id="13_470ua"]
+[ext_resource type="Texture2D" uid="uid://pyrqq7u1kbxj" path="res://assets/sprites/ballons/5c258dadd7c1475095cec95e5812a1d4MgI2IXekxoMOOEDO-12.png" id="14_wi7o3"]
+[ext_resource type="Texture2D" uid="uid://mhvm12oj0d2r" path="res://assets/sprites/ballons/5c258dadd7c1475095cec95e5812a1d4MgI2IXekxoMOOEDO-13.png" id="15_q4qg7"]
+[ext_resource type="Texture2D" uid="uid://bmj1iakmgwao7" path="res://assets/sprites/ballons/5c258dadd7c1475095cec95e5812a1d4MgI2IXekxoMOOEDO-14.png" id="16_nyb2i"]
+[ext_resource type="Texture2D" uid="uid://xjpn1nu8un6h" path="res://assets/sprites/ballons/5c258dadd7c1475095cec95e5812a1d4MgI2IXekxoMOOEDO-15.png" id="17_ssu6e"]
+[ext_resource type="Texture2D" uid="uid://cuwf8mjkaoo4c" path="res://assets/sprites/ballons/5c258dadd7c1475095cec95e5812a1d4MgI2IXekxoMOOEDO-16.png" id="18_e1qsa"]
+[ext_resource type="Texture2D" uid="uid://d15le1grcdned" path="res://assets/sprites/ballons/5c258dadd7c1475095cec95e5812a1d4MgI2IXekxoMOOEDO-17.png" id="19_f7fys"]
 
-[sub_resource type="Gradient" id="Gradient_542h4"]
-offsets = PackedFloat32Array(0.519231)
-colors = PackedColorArray(0.926299, 9.16891e-06, 5.77569e-07, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_mhxi4"]
-gradient = SubResource("Gradient_542h4")
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_8ql8n"]
-gradient = SubResource("Gradient_542h4")
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_lwl02"]
-gradient = SubResource("Gradient_542h4")
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_x60xb"]
-gradient = SubResource("Gradient_542h4")
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_5hs7m"]
-gradient = SubResource("Gradient_542h4")
+[sub_resource type="SpriteFrames" id="SpriteFrames_aawdi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_8yfkq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vfn61")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_u6t1g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_3hd5p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_470ua")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_wi7o3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_q4qg7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_nyb2i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ssu6e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_e1qsa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_f7fys")
+}],
+"loop": false,
+"name": &"eclate",
+"speed": 24.0
+}]
 
 [node name="BallonEclatable" type="Node2D"]
 scale = Vector2(3.81741, 3.81741)
@@ -31,16 +64,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -33.0
+offset_top = -33.0
+offset_right = 29.0
+offset_bottom = 35.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = SubResource("GradientTexture2D_mhxi4")
-texture_pressed = SubResource("GradientTexture2D_8ql8n")
-texture_hover = SubResource("GradientTexture2D_lwl02")
-texture_disabled = SubResource("GradientTexture2D_x60xb")
-texture_focused = SubResource("GradientTexture2D_5hs7m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-5.96046e-08, -5.50111)
+scale = Vector2(0.0956367, 0.0956367)
+sprite_frames = SubResource("SpriteFrames_aawdi")
+animation = &"eclate"
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

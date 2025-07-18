@@ -13,5 +13,8 @@ func _process(delta: float) -> void:
 
 func _on_texture_button_pressed() -> void:
 	if global.start:
+		$AnimatedSprite2D.play("eclate")
 		global.numberofbaloon -= 1
-		queue_free()
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	queue_free()

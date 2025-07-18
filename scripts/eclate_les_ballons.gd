@@ -48,6 +48,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	if global.numberofbaloon == 0 and global.start:
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(2).timeout
 		global.start = false
 		get_tree().change_scene_to_file("res://scenes/cut_scene.tscn")

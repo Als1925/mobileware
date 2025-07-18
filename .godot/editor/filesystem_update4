@@ -1,9 +1,6 @@
-res://scenes/cut_scene.tscn
-res://scripts/cut_scene.gd
-res://scripts/main_menu.gd
-res://scenes/main_menu.tscn
-res://scenes/eclate_les_ballons.tscn
 res://scenes/ballon_eclatable.tscn
+res://scenes/main_menu.tscn
+res://scenes/cut_scene.tscn
+res://scenes/eclate_les_ballons.tscn
 res://scripts/ballon_eclatable.gd
 res://scripts/eclate_les_ballons.gd
-res://scripts/global.gd
