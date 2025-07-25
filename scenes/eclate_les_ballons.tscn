@@ -1,8 +1,11 @@
 [gd_scene load_steps=2 format=3 uid="uid://bbm856fslj5kd"]
 
-[ext_resource type="PackedScene" uid="uid://c4sce6ecoft5t" path="res://scenes/ballon_eclatable.tscn" id="1_lnyhh"]
+[ext_resource type="Script" uid="uid://dt3bmwtm5248q" path="res://scripts/eclate_les_ballons.gd" id="1_7jgba"]
 
 [node name="EclateLesBallons" type="Node2D"]
+script = ExtResource("1_7jgba")
+
+[node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Label" type="Label" parent="."]
 visible = false
@@ -11,10 +14,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -66.0
-offset_top = -11.5
-offset_right = 66.0
-offset_bottom = 11.5
+offset_left = -416.0
+offset_top = -69.0
+offset_right = 416.0
+offset_bottom = 69.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 101
@@ -22,6 +25,20 @@ text = "Eclate les ballons"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="BallonEclatable" parent="." instance=ExtResource("1_lnyhh")]
+[node name="compte à rebours" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = 128.0
+offset_right = 60.0
+offset_bottom = 416.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 211
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1

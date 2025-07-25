@@ -12,4 +12,6 @@ func _process(delta: float) -> void:
 
 
 func _on_texture_button_pressed() -> void:
-	queue_free()
+	if global.start:
+		global.numberofbaloon -= 1
+		queue_free()
