@@ -1,8 +1,11 @@
-[gd_scene format=3 uid="uid://krv4vnysejf5"]
+[gd_scene load_steps=2 format=3 uid="uid://krv4vnysejf5"]
+
+[ext_resource type="Script" uid="uid://duxebbtup2vs8" path="res://scripts/cut_scene.gd" id="1_5gp8g"]
 
 [node name="CutScene" type="Node2D"]
+script = ExtResource("1_5gp8g")
 
-[node name="Label" type="Label" parent="."]
+[node name="compte à rebours" type="Label" parent="."]
 offset_left = 272.0
 offset_top = 693.0
 offset_right = 742.0

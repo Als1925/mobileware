@@ -1,1 +1,4 @@
 res://scenes/cut_scene.tscn
+res://scripts/cut_scene.gd
+res://scripts/main_menu.gd
+res://scenes/main_menu.tscn
