@@ -17,6 +17,7 @@ offset_left = 251.0
 offset_top = 834.0
 offset_right = 856.0
 offset_bottom = 1046.0
+theme_override_font_sizes/font_size = 121
 text = "PLAY"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
