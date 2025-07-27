@@ -54,6 +54,7 @@ func _physics_process(delta: float) -> void:
 
 
 func start_transition() -> void:
-	await get_tree().create_timer(2).timeout
 	global.start = false
+	await get_tree().create_timer(2).timeout
 	get_tree().change_scene_to_file("res://scenes/cut_scene.tscn")
+	

@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://tn58847vgr2x"]
+[gd_scene load_steps=5 format=3 uid="uid://tn58847vgr2x"]
 
 [ext_resource type="Script" uid="uid://dafsr585k4j0o" path="res://scripts/rythme.gd" id="1_ehv16"]
+[ext_resource type="PackedScene" uid="uid://onfhp6u8gh4f" path="res://scenes/timer_global.tscn" id="2_ehv16"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_5vq4g"]
 
@@ -9,6 +10,8 @@ size = Vector2(234, 234)
 
 [node name="Rythme" type="Node2D"]
 script = ExtResource("1_ehv16")
+
+[node name="TimerGlobal" parent="." instance=ExtResource("2_ehv16")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 

@@ -1,12 +1,13 @@
+Timer
+Label
+Camera2D
+ProgressBar
 Node
 Button
 Area2D
 Node2D
 AnimationPlayer
-Camera2D
 CollisionShape2D
 MeshInstance2D
 AnimatedSprite2D
-Label
 TextureButton
-Timer
