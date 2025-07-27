@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c4sce6ecoft5t"]
+[gd_scene load_steps=17 format=3 uid="uid://c4sce6ecoft5t"]
 
 [ext_resource type="Script" uid="uid://cl8iuhlora0cr" path="res://scripts/ballon_eclatable.gd" id="1_mhxi4"]
 [ext_resource type="Texture2D" uid="uid://cv21daml4ivaj" path="res://assets/sprites/ballons/5c258dadd7c1475095cec95e5812a1d4MgI2IXekxoMOOEDO-7.png" id="9_8yfkq"]
@@ -54,6 +54,63 @@ animations = [{
 "speed": 24.0
 }]
 
+[sub_resource type="Animation" id="Animation_nujdk"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-5.50111, -0.25, 0, 0.25, 0, -17.461, -0.25, 0, 0.25, 0, -5.50111, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureButton:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-33, -0.25, 0, 0.25, 0, -45.015, -0.25, 0, 0.25, 0, -33, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+
+[sub_resource type="Animation" id="Animation_1x0t4"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-5.50111, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureButton:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-33, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kfj8u"]
+_data = {
+&"RESET": SubResource("Animation_1x0t4"),
+&"idle": SubResource("Animation_nujdk")
+}
+
 [node name="BallonEclatable" type="Node2D"]
 scale = Vector2(3.81741, 3.81741)
 script = ExtResource("1_mhxi4")
@@ -76,6 +133,11 @@ position = Vector2(-5.96046e-08, -5.50111)
 scale = Vector2(0.0956367, 0.0956367)
 sprite_frames = SubResource("SpriteFrames_aawdi")
 animation = &"eclate"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_kfj8u")
+}
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

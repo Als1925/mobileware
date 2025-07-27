@@ -1,10 +1,11 @@
 extends Node2D
 
 var objet_scene = load("res://scenes/ballon_eclatable.tscn") as PackedScene
-@export var marge_pixels: int = 100  # marge sur les bords de l’écran
+@export var marge_pixels: int = 200  # marge sur les bords de l’écran
 
+var transition_started := false  # pour éviter plusieurs appels
 
-func _ready():
+func _ready() -> void:
 	randomize()
 
 	var viewport_rect = get_viewport_rect()
@@ -25,6 +26,7 @@ func _ready():
 		if instance is Node2D:
 			instance.position = Vector2(random_x, random_y)
 			instance.z_index = -1  # Pour être en arrière-plan
+			$MeshInstance2D.z_index = -2
 
 		add_child(instance)
 	
@@ -45,9 +47,13 @@ func _ready():
 	global.start = true
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	if global.numberofbaloon == 0 and global.start:
-		await get_tree().create_timer(2).timeout
-		global.start = false
-		get_tree().change_scene_to_file("res://scenes/cut_scene.tscn")
+	if not transition_started and global.numberofbaloon == 0 and global.start:
+		transition_started = true
+		start_transition()
+
+
+func start_transition() -> void:
+	await get_tree().create_timer(2).timeout
+	global.start = false
+	get_tree().change_scene_to_file("res://scenes/cut_scene.tscn")

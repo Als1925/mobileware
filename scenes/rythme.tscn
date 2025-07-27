@@ -1,0 +1,102 @@
+[gd_scene load_steps=4 format=3 uid="uid://tn58847vgr2x"]
+
+[ext_resource type="Script" uid="uid://dafsr585k4j0o" path="res://scripts/rythme.gd" id="1_ehv16"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5vq4g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ehv16"]
+size = Vector2(234, 234)
+
+[node name="Rythme" type="Node2D"]
+script = ExtResource("1_ehv16")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="gaucherythme" type="Node" parent="."]
+
+[node name="droiterythme" type="Node" parent="."]
+
+[node name="droite" type="Area2D" parent="."]
+position = Vector2(0, 1750)
+collision_layer = 128
+collision_mask = 64
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="droite"]
+position = Vector2(251, -1115)
+scale = Vector2(234, 234)
+mesh = SubResource("BoxMesh_5vq4g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="droite"]
+position = Vector2(251, -1115)
+shape = SubResource("RectangleShape2D_ehv16")
+
+[node name="Droitebouton" type="Button" parent="droite"]
+offset_left = 134.0
+offset_top = -1232.0
+offset_right = 368.0
+offset_bottom = -998.0
+
+[node name="gauche" type="Area2D" parent="."]
+position = Vector2(-502, 1750)
+collision_layer = 128
+collision_mask = 64
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="gauche"]
+position = Vector2(251, -1115)
+scale = Vector2(234, 234)
+mesh = SubResource("BoxMesh_5vq4g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gauche"]
+position = Vector2(251, -1115)
+shape = SubResource("RectangleShape2D_ehv16")
+
+[node name="Gauchebouton" type="Button" parent="gauche"]
+offset_left = 134.0
+offset_top = -1232.0
+offset_right = 368.0
+offset_bottom = -998.0
+
+[node name="Label" type="Label" parent="."]
+visible = false
+visibility_layer = 16
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -416.0
+offset_top = -69.0
+offset_right = 416.0
+offset_bottom = 69.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 101
+text = "En rythme"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="compte à rebours" type="Label" parent="."]
+visible = false
+visibility_layer = 16
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = 128.0
+offset_right = 60.0
+offset_bottom = 416.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 211
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="area_entered" from="droite" to="." method="_on_droite_area_entered"]
+[connection signal="area_exited" from="droite" to="." method="_on_droite_area_exited"]
+[connection signal="pressed" from="droite/Droitebouton" to="." method="_on_droitebouton_pressed"]
+[connection signal="area_entered" from="gauche" to="." method="_on_gauche_area_entered"]
+[connection signal="area_exited" from="gauche" to="." method="_on_gauche_area_exited"]
+[connection signal="pressed" from="gauche/Gauchebouton" to="." method="_on_gauchebouton_pressed"]

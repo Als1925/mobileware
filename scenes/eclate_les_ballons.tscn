@@ -1,14 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://bbm856fslj5kd"]
+[gd_scene load_steps=3 format=3 uid="uid://bbm856fslj5kd"]
 
 [ext_resource type="Script" uid="uid://dt3bmwtm5248q" path="res://scripts/eclate_les_ballons.gd" id="1_7jgba"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_lnyhh"]
+
 [node name="EclateLesBallons" type="Node2D"]
 script = ExtResource("1_7jgba")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0.4, 0.984314, 1)
+position = Vector2(-37, -20.5)
+scale = Vector2(1232, 2073)
+mesh = SubResource("BoxMesh_lnyhh")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Label" type="Label" parent="."]
 visible = false
+visibility_layer = 16
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -27,6 +36,7 @@ vertical_alignment = 1
 
 [node name="compte à rebours" type="Label" parent="."]
 visible = false
+visibility_layer = 16
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
